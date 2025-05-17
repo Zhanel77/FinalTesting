@@ -1,0 +1,288 @@
+{
+	"info": {
+		"_postman_id": "5e9ce9f5-6719-43cd-9d1d-1c68d52ded86",
+		"name": "Node.js Shopping API Tests",
+		"description": "Collection for automated API tests using Postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39550253"
+	},
+	"item": [
+		{
+			"name": "Register Test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.test(\"Response has userId\", function () {",
+							"    var json = pm.response.json();",
+							"    pm.expect(json).to.have.property(\"userId\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Zhanelkaaaa\",\n  \"password\": \"TestPassword134_\"\n}"
+				},
+				"url": {
+					"raw": "https://nodedatabase.onrender.com/users/register",
+					"protocol": "https",
+					"host": [
+						"nodedatabase",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response has token\", function () {",
+							"    var json = pm.response.json();",
+							"    pm.expect(json).to.have.property(\"token\");",
+							"});",
+							"pm.globals.set(\"authToken\", pm.response.json().token);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Zhanelkaaaa\",\n  \"password\": \"TestPassword134_\"\n}"
+				},
+				"url": {
+					"raw": "https://nodedatabase.onrender.com/users/login",
+					"protocol": "https",
+					"host": [
+						"nodedatabase",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products Test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response is an array\", function () {",
+							"    pm.expect(pm.response.json()).to.be.an('array');",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nodedatabase.onrender.com/products/get",
+					"protocol": "https",
+					"host": [
+						"nodedatabase",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"products",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Orders Test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.test(\"Response has id\", function () {",
+							"    var json = pm.response.json();",
+							"    pm.expect(json).to.have.property(\"id\");",
+							"});",
+							"pm.globals.set(\"createdProductId\", pm.response.json().id);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": \"6828650295d78e4e69e707c6\",\n  \"productId\": \"67b0ebe56436c57892919d9b\",\n  \"quantity\": 2\n}\n"
+				},
+				"url": {
+					"raw": "https://nodedatabase.onrender.com/orders/create",
+					"protocol": "https",
+					"host": [
+						"nodedatabase",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"orders",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Orders Test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nodedatabase.onrender.com/orders/delete68286b8e95d78e4e69e707d9",
+					"protocol": "https",
+					"host": [
+						"nodedatabase",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"orders",
+						"delete68286b8e95d78e4e69e707d9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order/userid",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8000"
+		},
+		{
+			"key": "authToken",
+			"value": ""
+		},
+		{
+			"key": "createdProductId",
+			"value": ""
+		}
+	]
+}
