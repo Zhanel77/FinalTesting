@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "chai": "^5.2.0",
+    "log4js": "^6.9.1",
+    "mocha": "^11.3.0",
+    "selenium-webdriver": "^4.32.0"
+  },
+  "name": "testik",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "testng_register_login.js",
+  "scripts": {
+  "test": "mocha testng_register_login.js --reporter mochawesome"
+}
+,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "mochawesome": "^7.1.3"
+  }
+}

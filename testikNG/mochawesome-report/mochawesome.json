@@ -1,0 +1,157 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-05-17T12:20:51.871Z",
+    "end": "2025-05-17T12:20:56.214Z",
+    "duration": 4343,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "24a2be1b-df6b-4869-8187-583ae78cb5a3",
+      "title": "",
+      "fullFile": "C:\\Users\\abume\\.vscode\\codes\\testik\\testng_register_login.js",
+      "file": "\\testng_register_login.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c31a3011-7757-401d-978b-9c38868468a1",
+          "title": "User Registration & Login Flow (TestNG Style)",
+          "fullFile": "C:\\Users\\abume\\.vscode\\codes\\testik\\testng_register_login.js",
+          "file": "\\testng_register_login.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"User Registration & Login Flow (TestNG Style)\"",
+              "fullTitle": "User Registration & Login Flow (TestNG Style) \"before all\" hook in \"User Registration & Login Flow (TestNG Style)\"",
+              "timedOut": false,
+              "duration": 974,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver = await new Builder().forBrowser(\"chrome\").build();\nlogger.info(\"✅ WebDriver started\");",
+              "err": {},
+              "uuid": "9394276a-2251-4312-ab33-4ba50ec7f12a",
+              "parentUUID": "c31a3011-7757-401d-978b-9c38868468a1",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"User Registration & Login Flow (TestNG Style)\"",
+              "fullTitle": "User Registration & Login Flow (TestNG Style) \"after all\" hook in \"User Registration & Login Flow (TestNG Style)\"",
+              "timedOut": false,
+              "duration": 95,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if (driver) {\n  await driver.quit();\n  logger.info(\"🛑 WebDriver closed\");\n}",
+              "err": {},
+              "uuid": "0ae0e8d0-63d0-433b-ab14-d8fdcdce4391",
+              "parentUUID": "c31a3011-7757-401d-978b-9c38868468a1",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "1️⃣ should register a new user",
+              "fullTitle": "User Registration & Login Flow (TestNG Style) 1️⃣ should register a new user",
+              "timedOut": false,
+              "duration": 985,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.get(`${baseUrl}/users/add`);\nlogger.info(\"🌐 Opened registration page\");\nawait driver.findElement(By.id(\"name\")).sendKeys(username);\nawait driver.findElement(By.id(\"password\")).sendKeys(password);\nawait driver.findElement(By.id(\"role\")).sendKeys(\"general\");\nawait driver.findElement(By.css(\"button[type='submit']\")).click();\nlogger.info(\"📝 Submitted registration form\");\nconst filePath = path.join(__dirname, `screenshots/register_success.png`);\nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync(filePath, screenshot, 'base64');\nlogger.info(`📸 Screenshot saved: ${filePath}`);",
+              "err": {},
+              "uuid": "1ffcb48b-793c-4387-b2b3-a2b4aef3bd1b",
+              "parentUUID": "c31a3011-7757-401d-978b-9c38868468a1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "2️⃣ should login with the new user",
+              "fullTitle": "User Registration & Login Flow (TestNG Style) 2️⃣ should login with the new user",
+              "timedOut": false,
+              "duration": 2283,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.get(`${baseUrl}/users`);\nlogger.info(\"🌐 Opened login page\");\nawait driver.findElement(By.id(\"name\")).sendKeys(username);\nawait driver.findElement(By.id(\"password\")).sendKeys(password);\nawait driver.findElement(By.css(\"button[type='submit']\")).click();\nlogger.info(\"🔐 Submitted login form\");\nawait driver.wait(until.urlContains(\"/dashboard\"), 20000);\nconst url = await driver.getCurrentUrl();\nexpect(url).to.include(\"/dashboard\");\nconst filePath = path.join(__dirname, `screenshots/login_success.png`);\nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync(filePath, screenshot, 'base64');\nlogger.info(`📸 Screenshot saved: ${filePath}`);",
+              "err": {},
+              "uuid": "01081526-73f4-4b0d-8def-fa518cb27d0e",
+              "parentUUID": "c31a3011-7757-401d-978b-9c38868468a1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1ffcb48b-793c-4387-b2b3-a2b4aef3bd1b",
+            "01081526-73f4-4b0d-8def-fa518cb27d0e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3268,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 60000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.3.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

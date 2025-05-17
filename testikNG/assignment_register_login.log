@@ -1,0 +1,37 @@
+[2025-05-17T16:58:35.175] [INFO] default - WebDriver started
+[2025-05-17T16:58:35.838] [INFO] default - Opened registration page
+[2025-05-17T16:58:36.407] [INFO] default - Opened login page
+[2025-05-17T16:58:46.820] [INFO] default - WebDriver closed
+[2025-05-17T16:59:16.515] [INFO] default - WebDriver started
+[2025-05-17T16:59:17.006] [INFO] default - Opened registration page
+[2025-05-17T16:59:17.504] [INFO] default - Opened login page
+[2025-05-17T16:59:27.883] [INFO] default - WebDriver closed
+[2025-05-17T17:08:16.794] [INFO] default - WebDriver started
+[2025-05-17T17:08:17.459] [INFO] default - Opened registration page
+[2025-05-17T17:08:17.791] [INFO] default - Submitted registration form
+[2025-05-17T17:08:18.304] [INFO] default - Opened login page
+[2025-05-17T17:08:19.528] [INFO] default - Logged in successfully and verified title
+[2025-05-17T17:08:19.611] [INFO] default - WebDriver closed
+[2025-05-17T17:13:19.443] [INFO] default - ✅ WebDriver started
+[2025-05-17T17:13:20.012] [INFO] default - 🌐 Opened registration page
+[2025-05-17T17:13:20.336] [INFO] default - 📝 Submitted registration form
+[2025-05-17T17:13:20.470] [INFO] default - 📸 Screenshot saved: C:\Users\abume\.vscode\codes\testik\screenshots\register_success.png
+[2025-05-17T17:13:20.820] [INFO] default - 🌐 Opened login page
+[2025-05-17T17:13:21.058] [INFO] default - 🔐 Submitted login form
+[2025-05-17T17:13:22.924] [INFO] default - 🛑 WebDriver closed
+[2025-05-17T17:17:43.012] [INFO] default - ✅ WebDriver started
+[2025-05-17T17:17:44.055] [INFO] default - 🌐 Opened registration page
+[2025-05-17T17:17:44.372] [INFO] default - 📝 Submitted registration form
+[2025-05-17T17:17:44.492] [INFO] default - 📸 Screenshot saved: C:\Users\abume\.vscode\codes\testik\screenshots\register_success.png
+[2025-05-17T17:17:44.885] [INFO] default - 🌐 Opened login page
+[2025-05-17T17:17:45.099] [INFO] default - 🔐 Submitted login form
+[2025-05-17T17:17:46.387] [INFO] default - 📸 Screenshot saved: C:\Users\abume\.vscode\codes\testik\screenshots\login_success.png
+[2025-05-17T17:17:46.481] [INFO] default - 🛑 WebDriver closed
+[2025-05-17T17:20:52.847] [INFO] default - ✅ WebDriver started
+[2025-05-17T17:20:53.448] [INFO] default - 🌐 Opened registration page
+[2025-05-17T17:20:53.708] [INFO] default - 📝 Submitted registration form
+[2025-05-17T17:20:53.834] [INFO] default - 📸 Screenshot saved: C:\Users\abume\.vscode\codes\testik\screenshots\register_success.png
+[2025-05-17T17:20:54.167] [INFO] default - 🌐 Opened login page
+[2025-05-17T17:20:54.356] [INFO] default - 🔐 Submitted login form
+[2025-05-17T17:20:56.118] [INFO] default - 📸 Screenshot saved: C:\Users\abume\.vscode\codes\testik\screenshots\login_success.png
+[2025-05-17T17:20:56.213] [INFO] default - 🛑 WebDriver closed
