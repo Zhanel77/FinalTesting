@@ -11,6 +11,18 @@ class OrdersPage:
         self.add_order_button = (By.XPATH, "//button[text()='Add Order']")
         self.order_list = (By.ID, "orderList")
 
+    @property
+    def product_dropdown(self):
+        return WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.product_select))
+
+    @property
+    def quantity_field(self):
+        return WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.quantity_input))
+
+    @property
+    def add_order_button_element(self):
+        return WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.add_order_button))
+
     def add_order(self, quantity):
         wait = WebDriverWait(self.driver, 10)
 
@@ -39,12 +51,12 @@ class OrdersPage:
         except Exception as e:
             print("❗ No alert appeared:", e)
             return "No alert appeared"
-    
+
     def is_order_added(self, quantity_text):
         order_list_elem = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located(self.order_list))
         return quantity_text in order_list_elem.text
-    
+
     def delete_first_product(self):
         wait = WebDriverWait(self.driver, 20)
 
@@ -62,5 +74,5 @@ class OrdersPage:
             print("[INFO] No alert appeared")
 
         # Wait until product disappears (or list refreshes)
-        wait.until(EC.staleness_of(product_div))  # Waits until div is removed from DOM
+        wait.until(EC.staleness_of(product_div))
         print("✅ Product deleted and page refreshed.")
